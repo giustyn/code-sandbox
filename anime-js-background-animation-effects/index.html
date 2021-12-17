@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="fonts/DaxPro.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2><span>Welcome Back!</span><br>Employee Name</h2>
+    </div>
+
+    <script src="js/anime.min.js"></script>
+    <script>
+        const container = document.querySelector('.container')
+        for (var i = 0; i <= 20; i++) {
+            const blocks = document.createElement('div');
+            blocks.classList.add('block');
+            container.appendChild(blocks);
+        }
+
+        function animateBlocks() {
+            anime({
+                targets: '.block',
+                translateX: function () {
+                    return anime.random(-1000, 1000);
+                },
+                translateY: function () {
+                    return anime.random(-600, 900);
+                },
+                scale: function () {
+                    return anime.random(1, 30);
+                },
+                direction: 'alternate',
+                easing: 'easeOutElastic',
+                duration: anime.stagger(250),
+                opacity: [0, 1],
+                delay: anime.stagger(50, {easing: 'easeOutQuad'}),
+                loop: true,
+            })
+            anime({
+                targets: 'h2',
+                translateY: ['50%', 0], // from 100 to 250
+                delay: 1000,
+                opacity: [0, 1],
+                loop: true,
+                direction: 'alternate',
+                duration: 3000,
+            });
+        }
+
+        animateBlocks()
+    </script>
+</body>
+
+</html>

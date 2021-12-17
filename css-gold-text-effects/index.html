@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="flex gold-1">
+            <h1 class="bg" contenteditable> Gold </h1>
+            <h1 class="fg"> Gold </h1>
+        </div>
+        <div class="flex gold-2">
+            <h1 data-heading="Winner" contenteditable>Winner</h1>
+        </div>
+    </div>
+    <script>
+        var h1 = document.querySelectorAll("h1");
+
+        h1.addEventListener("input", function () {
+            this.setAttribute("data-heading", this.innerText);
+        });
+    </script>
+</body>
+
+</html>

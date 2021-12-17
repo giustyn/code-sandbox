@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+.cycleImage.active {
+    z-index: 2;
+    opacity: 1;
+}
+
+.cycleImage {
+    position: absolute;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity .5s;
+    height: 100%;
+    width: 100%;
+    min-height: 100px;
+}
+
+.image1 {
+    background-color: blue;
+}
+
+.image2 {
+    background-color: red;
+}
+
+.image3 {
+    background-color: green;
+}

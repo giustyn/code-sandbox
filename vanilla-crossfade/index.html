@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanilla Crossfade</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="header">
+        <img class="cycleImage image1 active" />
+        <img class="cycleImage image2" />
+        <img class="cycleImage image3" />
+    </div>
+    <script>
+        // Get all matching elements, with class "cycleImage
+        const cycleImages = document.querySelectorAll(".cycleImage");
+
+        function cycle() {
+            for (let i = 0; i < cycleImages.length; i++) {
+                if (cycleImages[i].classList.contains('active')) {
+                    cycleImages[i].classList.remove('active');
+                    // If the new index we want to set to active is out of bounds, start back at the beginning
+                    const newActive = i + 1 >= cycleImages.length ? 0 : i + 1;
+                    cycleImages[newActive].classList.add('active');
+                    break; // If we have already encountered our solution, we can break out of the loop early.
+                }
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => setInterval(cycle, 2000));
+    </script>
+</body>
+
+</html>

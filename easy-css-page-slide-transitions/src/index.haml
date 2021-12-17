@@ -1,0 +1,58 @@
+.easytransitions
+
+  -# Transitions set up
+  .easytransitions_transition
+    -(1..8).each do |i|
+      .div{:class => "easytransitions_transition__part-#{i} none"}
+  .easytransitions_navigation
+    .easytransitions_navigation__left
+      %i.icon.ion-arrow-left-c
+    .easytransitions_navigation__right
+      %i.icon.ion-arrow-right-c
+  -# End transitions set up
+  
+  -# Slides
+  %section.active_slide{'data-transition' => 'none'}
+    .center 
+      %h1 Super Easy Slider/Page Transitions
+      %h2 Go ahead, click the lil arrows
+  %section{'data-transition' => 'split_diagonal'}
+    .center 
+      %h1 You see that?
+      %span %section{'data-transition' => 'split_diagonal'}
+  %section{'data-transition' => 'split_diagonal_alt'}
+    .center 
+      %h1 So smooth!
+      %span %section{'data-transition' => 'split_diagonal_alt'}
+  %section{'data-transition' => 'split_diamond'}
+    .center 
+      %h1 Such swag!
+      %span %section{'data-transition' => 'split_diamond'}
+  %section{'data-transition' => 'split_vertical'}
+    .center 
+      %h1 Easy to implement!
+      %span %section{'data-transition' => 'split_vertical'}
+  %section{'data-transition' => 'split_horizontal'}
+    .center 
+      %h1 Fun to use!
+      %span %section{'data-transition' => 'split_horizontal'}
+  %section{'data-transition' => 'wipe_left'}
+    .center 
+      %h1 Looks good!
+      %span %section{'data-transition' => 'wipe_left'}
+  %section{'data-transition' => 'wipe_right'}
+    .center 
+      %h1 Feels good!
+      %span %section{'data-transition' => 'wipe_right'}
+  %section{'data-transition' => 'wipe_top'}
+    .center 
+      %h1 Another transition
+      %span %section{'data-transition' => 'wipe_top'}
+  %section{'data-transition' => 'wipe_bottom'}
+    .center 
+      %h1 Well you got this far, hows about a cheeky follow?
+      %a.download{:href => 'https://codepen.io/jcoulterdesign/pens/popular/',:target => '_blank'} 
+        <i class="icon ion-eye"></i> <span>View my other pens</span>
+      %a.follow{:href => 'https://codepen.io/jcoulterdesign/',:target => '_blank'} 
+        <i class="icon ion-social-codepen-outline"></i> <span>Follow me on codepen</span>
+  -# End slides

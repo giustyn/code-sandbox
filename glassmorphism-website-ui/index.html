@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glassmorphism Website UI</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <video id="videoBG" poster="" autoplay muted loop>
+                <source type="video/mp4">
+            </video>
+            <header>
+                <a href="#" class="logo">Logo</a>
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </header>
+            <div class="content">
+                <h2>Glassmorphism UI</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore dicta quos error nihil, dolor quis
+                    asperiores doloremque animi consequatur minus tempore iure accusamus perferendis earum dignissimos
+                    sed quam possimus officiis.
+                </p>
+                <a href="#">Read More</a>
+            </div>
+            <div class="imgBx">
+                <img src="img/kid.png" alt="">
+            </div>
+            <ul class="sci">
+                <li><a href="#"><img src="img/logo_facebook.svg" alt=""></a></li>
+                <li><a href="#"><img src="img/logo_twitter.svg" alt=""></a></li>
+                <li><a href="#"><img src="img/logo_instagram.svg" alt=""></a></li>
+            </ul>
+            <p class="copyrightText">Copyright © 2021 Lorem, ipsum dolor. All rights reserved.</p>
+        </div>
+    </section>
+    <script>
+        function setVideo() {
+            const url = 'https://retail.adrenalineamp.com/navori/assets/_dev/Bokeh_1920x1080.mp4';
+            const el = document.querySelector('video');
+            el.setAttribute('src', url);
+        }
+        setVideo();
+    </script>
+</body>
+
+</html>

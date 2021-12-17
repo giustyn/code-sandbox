@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.pinwheel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #042104;
+  animation: animateBg 10s linear infinite;
+}
+
+@keyframes animateBg {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.pinwheel .loader {
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+}
+
+.pinwheel .loader span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(calc(18deg * var(--i)));
+}
+
+.pinwheel .loader span::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--dot);
+  height: var(--dot);
+  border-radius: 50%;
+  background: var(--color);
+  box-shadow: 0 0 calc(var(--dot) * 1) var(--color),
+    0 0 calc(var(--dot) * 2) var(--color),
+    0 0 calc(var(--dot) * 3) var(--color),
+    0 0 calc(var(--dot) * 4) var(--color),
+    0 0 calc(var(--dot) * 5) var(--color);
+  animation: animate 2s ease-in-out infinite;
+  animation-delay: calc(0.1s * var(--i));
+}
+
+@keyframes animate {
+  0% {
+    transform: scale(1);
+  }
+
+  50%, 100% {
+    transform: scale(0);
+  }
+}
+
+:root {
+  --size: 20%;
+  --dot: 2vw;
+  --color: #00ff0a;
+}

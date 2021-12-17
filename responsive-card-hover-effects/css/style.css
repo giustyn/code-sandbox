@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #16384c;
+}
+
+:root {
+    --placeholder: url('https://source.unsplash.com/1000x1000/?placeholder');
+}
+
+.photo-1,
+.photo-2,
+.photo-3 {
+    content: var(--placeholder);
+}
+
+.photo-1 {
+    --animation-order: 1;
+    content: url('https://source.unsplash.com/2000x2000/weekly?architecture');
+}
+
+.photo-2 {
+    --animation-order: 2;
+    content: url('https://source.unsplash.com/2000x2000/weekly?nature');
+}
+
+.photo-3 {
+    --animation-order: 3;
+    content: url('https://source.unsplash.com/2000x2000/weekly?people');
+}
+
+:root {
+    --card-size: 20em;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* border: .1rem solid red; */
+}
+
+.container .card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    width: var(--card-size);
+    height: var(--card-size);
+    background: #fff;
+    margin: 2em;
+    padding: 3em;
+    border-radius: 5px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    /* border: .1rem solid green; */
+}
+
+.container * {
+    animation-name: animateInUp;
+    animation-duration: 500ms;
+    animation-delay: calc(var(--animation-order) * 100ms);
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes animateInUp {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) translateY(100%);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes animateInDown {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) translateY(-100%);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.container .card:hover {
+    /* width: calc(var(--card-size) + 2em); */
+    height: auto;
+    margin-top: -2em;
+    transition: .2s ease-in-out;
+}
+
+.container .card:not(:hover) {
+    opacity: 0.8;
+    /* transform: scale(0.9); */
+    /* box-shadow: none; */
+    transition: none;
+    transition: .5s ease-in-out;
+    /* color: transparent; */
+    /* background-color: transparent; */
+}
+
+.container .card .imgBx {
+    position: relative;
+    width: calc(var(--card-size) - 4em);
+    height: calc(var(--card-size) - 4em);
+    top: -5em;
+    z-index: 1;
+    border-radius: .5rem;
+    animation: none;
+}
+
+.container .card .imgBx img {
+    width: 100%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: .5rem;
+}
+
+.container .card .content {
+    position: relative;
+    text-align: center;
+    margin-top: -2em;
+    color: #111;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 0;
+    animation: none;
+}
+
+.container .card:hover .content {
+    visibility: visible;
+    opacity: 1;
+    animation: .5s ease animateInDown;
+}

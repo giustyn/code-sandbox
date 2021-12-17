@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Calculator - Vanilla Tilt</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="calc-container">
+        <form class="calculator" name="calc"><input class="form-control value" type="text" readonly="" name="txt"><span class="num clear" onclick="calc.txt.value = &#39;&#39;">c</span><span class="num" onclick="document.calc.txt.value +=&#39;/&#39;">/</span><span class="num" onclick="document.calc.txt.value +=&#39;*&#39;">*</span><span class="num" onclick="document.calc.txt.value +=&#39;7&#39;">7</span><span class="num" onclick="document.calc.txt.value +=&#39;8&#39;">8</span><span class="num" onclick="document.calc.txt.value +=&#39;9&#39;">9</span><span class="num" onclick="document.calc.txt.value +=&#39;-&#39;">-</span><span class="num" onclick="document.calc.txt.value +=&#39;4&#39;">4</span><span class="num" onclick="document.calc.txt.value +=&#39;5&#39;">5</span><span class="num" onclick="document.calc.txt.value +=&#39;6&#39;">6</span><span class="num plus" onclick="document.calc.txt.value +=&#39;+&#39;">+</span><span class="num" onclick="document.calc.txt.value +=&#39;1&#39;">1</span><span class="num" onclick="document.calc.txt.value +=&#39;2&#39;">2</span><span class="num" onclick="document.calc.txt.value +=&#39;3&#39;">3</span><span class="num" onclick="document.calc.txt.value +=&#39;0&#39;">0</span><span class="num" onclick="document.calc.txt.value +=&#39;00&#39;">00</span><span class="num" onclick="document.calc.txt.value +=&#39;.&#39;">.</span><span class="num equal" onclick="document.calc.txt.value =eval(calc.txt.value)">=</span></form>
+    </div>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/tilt.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Parallax Scrolling Effects</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="js/jarallax.css">
+</head>
+
+<body>
+    <section>
+        <div class="box">
+            <h2 data-jarallax-element="0 -100">Lorem ipsum dolor sit amet.</h2>
+            <div class="container">
+                <div class="imgBx jarallax">
+                    <img class="jarallax-img" src="https://source.unsplash.com/1920x1080/?nature" alt="">
+                </div>
+                <div class="content" data-jarallax-element="-100 0">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel officiis accusantium quae delectus,
+                        nam quibusdam aliquam temporibus laboriosam sequi, corporis voluptas tempore ullam corrupti ad.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="box">
+            <h2 data-jarallax-element="0 100">Lorem ipsum dolor sit amet consectetur.</h2>
+            <div class="container">
+                <div class="imgBx jarallax">
+                    <img class="jarallax-img" src="https://source.unsplash.com/1920x1080/?animals" alt="">
+                </div>
+                <div class="content" data-jarallax-element="-100 0">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis magnam voluptatum nihil molestias voluptatem. Placeat magni quaerat aperiam exercitationem. Aut debitis voluptatibus quibusdam! Voluptas maiores quidem eius vel rerum neque.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="box">
+            <h2 data-jarallax-element="0 -100">Lorem ipsum dolor sit.</h2>
+            <div class="container">
+                <div class="imgBx jarallax">
+                    <img class="jarallax-img" src="https://source.unsplash.com/1920x1080/?people" alt="">
+                </div>
+                <div class="content" data-jarallax-element="-100 0">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam mollitia accusamus, eligendi
+                        laboriosam a recusandae corporis itaque inventore? Repellat alias unde doloremque autem ipsam
+                        asperiores deleniti consequatur sed tempore odit?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="js/jarallax.js"></script>
+    <script src="js/jarallax-element.js"></script>
+    <script type="text/javascript">
+        jarallax(document.querySelectorAll('.jarallax'), {
+            speed: 0.5
+        });
+    </script>
+</body>
+
+</html>>

@@ -1,0 +1,80 @@
+// For more reasons to love grid, check out my article:
+// @link https://moderncss.dev/3-css-grid-techniques-to-make-you-a-grid-convert/
+// Or my additional articles that cover grid:
+// @link https://moderncss.dev/topics/#grid
+
+* {
+	box-sizing: border-box;
+}
+
+span {
+	background: #fff;
+	padding: 1rem;
+	border-radius: 7px;
+	box-shadow: 0 2px 6px -2px rgba(black, 0.42);
+	height: 30vh;
+
+	display: grid;
+	grid-gap: 0.5rem;
+
+	b {
+		background-color: #7B86F5;
+		border-radius: 4px;
+		display: grid;
+		place-items: center;
+		color: #fff;
+		font-size: 1.5rem;
+	}
+
+	&.template {
+		
+		// Using `repeat()` lets us explicitly define
+		// the number of rows or columns to allow
+		&-2col {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		&-3col {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		// NOTE: The 2col will also create this arrangement,
+		// this is just more explicit
+		&-4up {
+			// grid-template-rows / grid-template-columns
+			grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+		}
+
+		&-sidebar--left {
+			grid-template: "sidebar mainA"
+								"sidebar mainB";
+
+			> :nth-child(1) {
+				grid-area: sidebar;
+			}
+		}
+
+		&-sidebar--right {
+			grid-template: "mainA sidebar"
+								"mainB sidebar";
+
+			> :nth-child(3) {
+				grid-area: sidebar;
+			}
+		}
+	}
+}
+
+body {
+	background: #f9f9f9;
+	min-height: 100vh;
+
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 30ch);
+	place-content: center;
+	grid-gap: 5vh;
+	max-width: calc((30ch * 3) + (5vh * 2) + 2rem);
+	margin-left: auto;
+	margin-right: auto;
+	padding: 1rem;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direction-Aware Image Hover Effects</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <span></span>
+            <div class="imgBx"><img class="photo" alt=""></div>
+            <div class="content">
+                <div>
+                    <h2>Card Title</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed veniam animi nemo minima veritatis,
+                        explicabo eligendi nihil tempora itaque consequuntur impedit nobis recusandae enim excepturi
+                        accusantium quisquam voluptatum maxime dolore.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <span></span>
+            <div class="imgBx"><img class="photo" alt=""></div>
+            <div class="content">
+                <div>
+                    <h2>Card Title</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed veniam animi nemo minima veritatis,
+                        explicabo eligendi nihil tempora itaque consequuntur impedit nobis recusandae enim excepturi
+                        accusantium quisquam voluptatum maxime dolore.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <span></span>
+            <div class="imgBx"><img class="photo" alt=""></div>
+            <div class="content">
+                <div>
+                    <h2>Card Title</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed veniam animi nemo minima veritatis,
+                        explicabo eligendi nihil tempora itaque consequuntur impedit nobis recusandae enim excepturi
+                        accusantium quisquam voluptatum maxime dolore.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $('.card').on('mouseenter', function(e){
+                x = e.pageX - $(this).offset().left,
+                y = e.pageY - $(this).offset().top;
+                $(this).find('span').css({top:y, left:x})
+            })
+            $('.card').on('mouseout', function(e){
+                x = e.pageX - $(this).offset().left,
+                y = e.pageY - $(this).offset().top;
+                $(this).find('span').css({top:y, left:x})
+            })
+        })
+    </script>
+</body>
+
+</html>
