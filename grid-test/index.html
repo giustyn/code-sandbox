@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="parent">
+        <div class="box div1"></div>
+        <div class="box div2"></div>
+        <div class="box div3"></div>
+        <div class="box div4"></div>
+        <div class="box div5"></div>
+        <div class="box div6"></div>
+        <div class="box div7"></div>
+        <div class="box div8"></div>
+        <div class="box div9"></div>
+        <div class="box div10"></div>
+        <div class="box div11"></div>
+        <div class="box div12"></div>
+        <div class="box div13"></div>
+        <div class="box div14"></div>
+        <div class="box div15"></div>
+        <div class="box div16"></div>
+        <div class="box div17"></div>
+        <div class="box div18"></div>
+        <div class="box div19"></div>
+        <div class="box div20"></div>
+        <div class="box div21"></div>
+        <div class="box div22"></div>
+        <div class="box div23"></div>
+        <div class="box div24"></div>
+        <div class="box div25"></div>
+        <div class="box div26"></div>
+        <div class="box div27"></div>
+        <div class="box div28"></div>
+        <div class="box div29"></div>
+        <div class="box div30"></div>
+        <div class="box div31"></div>
+        <div class="box div32"></div>
+        <div class="box div33"></div>
+        <div class="box div34"></div>
+        <div class="box div35"></div>
+        <div class="box div36"></div>
+        <div class="box div37"></div>
+        <div class="box div38"></div>
+        <div class="box div39"></div>
+        <div class="box div40"></div>
+        <div class="box div41"></div>
+        <div class="box div42"></div>
+        <div class="box div43"></div>
+        <div class="box div44"></div>
+        <div class="box div45"></div>
+        <div class="box div46"></div>
+        <div class="box div47"></div>
+        <div class="box div48"></div>
+        <div class="box div49"></div>
+        <div class="box div50"></div>
+        <div class="box div51"></div>
+        <div class="box div52"></div>
+        <div class="box div53"></div>
+        <div class="box div54"></div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        (function () {
+
+            function get_random_color() {
+                var letters = '0123456789ABCDEF'.split('');
+                var color = '#';
+                for (var i = 0; i < 6; i++) {
+                    color += letters[Math.round(Math.random() * 12)];
+                }
+                return color;
+            }
+
+            var $box = $('.box');
+            $box.each(function (i) {
+                
+                setInterval(() => {
+                $(this).css("background-color", get_random_color());
+                // console.log(this)
+                }, 1000);
+            });
+
+        })();
+    </script>
+</body>
+
+</html>

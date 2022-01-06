@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Mosaic</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="grid">
+        <div class="grid-item">
+            <div class="overlay">Lorem ipsum dolor sit amet.</div>
+            <img src="http://source.unsplash.com/1920x1080/?nature" alt="">
+        </div>
+        <div class="grid-item">
+            <div class="overlay">Lorem ipsum dolor sit amet.</div>
+            <img src="http://source.unsplash.com/1920x1080/?water" alt="">
+        </div>
+        <div class="grid-item">
+            <div class="overlay">Lorem ipsum dolor sit amet.</div>
+            <img src="http://source.unsplash.com/1920x1080/?urban" alt="">
+        </div>
+        <div class="grid-item">
+            <div class="overlay">Lorem ipsum dolor sit amet.</div>
+            <img src="http://source.unsplash.com/1920x1080/?fire" alt="">
+        </div>
+        <div class="grid-item">
+            <div class="overlay">Lorem ipsum dolor sit amet.</div>
+            <img src="http://source.unsplash.com/1920x1080/?birds" alt="">
+        </div>
+        <div class="grid-item">
+            <div class="overlay">Lorem ipsum dolor sit amet.</div>
+            <img src="http://source.unsplash.com/1920x1080/?tiger" alt="">
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            
+            function setRandomClass() {
+                var grid = $(".grid-item");
+                var number = grid.length;
+                var random = Math.floor((Math.random() * number));
+                console.log(random);
+                grid.removeClass("featured");
+                grid.eq(random).addClass("featured");
+            }
+            setRandomClass();
+            setInterval(function () {
+                setRandomClass();
+            }, 10000);
+
+            function getRandomSize(min, max) {
+                return Math.round(Math.random() * (max - min) + min);
+            }
+
+            var allImages = "";
+
+            for (var i = 0; i < 25; i++) {
+                var width = getRandomSize(200, 400);
+                var height = getRandomSize(200, 400);
+                allImages += '<img src="https://placekitten.com/' + width + '/' + height +
+                    '" alt="pretty kitty">';
+            }
+
+            $('#photos').append(allImages);
+        });
+    </script>
+</body>
+
+</html>
