@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <link rel="stylesheet" href="css/PNCBrand.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="slide" id="template" style="display: none">
+        <h1 class="title">title</h1>
+    </div>
+
+    <main  style="position: relative"></main>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        const feeds = [];
+
+        for (let i = 0; i < 15; i++) {
+          feeds.push({ title: "feed " + (i + 1) });
+        }
+
+        function animateTemplate($container, $template, data) {
+          const $clone = $template.clone();
+          $clone.find(".title").text(data.title);
+          $clone.attr("id", "").show();
+
+          $container.append($clone);
+
+          setTimeout(function() {
+            $clone.remove();
+          }, 2500);
+
+        }
+
+        function iterateAnimations() {
+          let current = 0;
+          const $template = $("#template");
+          const $container = $("main");
+
+          animateTemplate($container, $template, feeds[current]);
+          current += 1;
+
+          setInterval(function() {
+            animateTemplate($container, $template, feeds[current]);
+            current += 1;
+          }, 2000);
+
+        }
+
+        iterateAnimations();
+
+    </script>
+</body>
+
+</html>
