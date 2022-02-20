@@ -1,5 +1,13 @@
-<html>
-  <body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
     <script>
       // Filter files by search term match and clean out non recipe files
       const filterFiles = (filter) => {
@@ -28,7 +36,7 @@
           letterPosition = 100;
         }
         return wordIndex + letterPosition * 100;
-      }
+      } 
       // Sort files by best match
       const sortFiles = (filter) => {
         filter = filter.toLowerCase()
@@ -82,7 +90,7 @@
         navigator.serviceWorker.register('./serviceworker.js');
       }
     </script>
-    
+  
     
     <!-- <script>
       (async () => {
