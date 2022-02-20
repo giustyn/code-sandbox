@@ -54,7 +54,7 @@ ul li a {
   letter-spacing: 2pt;
   text-transform: uppercase;
   /* color: #fff; */
-  /* color: transparent; */
+  color: transparent;
   -webkit-text-stroke: .1rem var(--clr);
 }
 
@@ -65,7 +65,7 @@ ul li a::before {
   width: 0;
   overflow: hidden;
   transition: 0.5s;
-  /* border-right: .2em solid var(--clr); */
+  border-right: .2em solid var(--clr);
 }
 
 ul li a:hover::before {
