@@ -24,6 +24,7 @@ ul {
 }
 
 ul li {
+  /* --clr: #0079c1; */
   position: relative;
   list-style: none;
 }
@@ -52,7 +53,8 @@ ul li a {
   line-height: 1;
   letter-spacing: 2pt;
   text-transform: uppercase;
-  color: transparent;
+  /* color: #fff; */
+  /* color: transparent; */
   -webkit-text-stroke: .1rem var(--clr);
 }
 
@@ -62,8 +64,8 @@ ul li a::before {
   color: var(--clr);
   width: 0;
   overflow: hidden;
-  transition: 1s;
-  border-right: .2em solid var(--clr);
+  transition: 0.5s;
+  /* border-right: .2em solid var(--clr); */
 }
 
 ul li a:hover::before {
