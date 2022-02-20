@@ -21,7 +21,7 @@
       font-weight: 400;
       margin: 0;
       padding: 0 10px;
-      border: 1px solid #eaecef;
+      border: 1px solid #ccc;
       border-radius: 3px;
       width: 100%;
       flex: 1 1;
@@ -31,7 +31,7 @@
 <body>
   <div class="container-lg px-3 my-5 markdown-body">
     <h1>
-      <a href="./">projects</a>
+      <a href="./">giustyn.github.io/code-sandbox</a>
       <form id="search_form" autocomplete="off">
         <input id="search_input">
       </form>
@@ -47,9 +47,11 @@
           const filePath = file.path;
           const fileName = filePath.replace('.md', '').toLowerCase().replace(/-/g, '');
           const isNotIgnore = filePath !== '.gitignore';
+          const isNotStyle = filePath !== 'style.css';
+          const isNotWorker = filePath !== 'serviceworker.js';
           const isInFilter = filter.split(' ')
             .every((token) => fileName.indexOf(token.toLowerCase()) !== -1)
-          return isNotIgnore && isInFilter;
+          return isNotWorker && isNotStyle && isNotIgnore && isInFilter;
         }
       }
       // Match by closest to start of word then earliest word
