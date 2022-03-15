@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <div class="top-section">Scroll Down</div>
+    <div class="img-container">Img Revealed</div>
+    <div class="bottom-section">
+      <h3>Lorem ipsum dolor sit.</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt iure
+        amet molestias cum vel veritatis eum laborum officiis obcaecati numquam?
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio,
+        temporibus expedita! Maiores, inventore magni, ex esse totam, fugit quae
+        debitis minima autem amet perferendis voluptatem!
+      </p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
+
+    <script>
+      let bgImage = document.querySelector(".img-container");
+      // Now registereing the scrollTrigger plugin to gsap
+      gsap.registerPlugin(ScrollTrigger);
+      // Now we are going to animate
+      gsap.fromTo(
+        bgImage,
+        {
+          clipPath: "circle(5% at 77% 40%)",
+        },
+        {
+          clipPath: "circle(75% at 50% 50%)",
+          ease: "none",
+          // We want to do that animation on scroll
+          scrollTrigger: {
+            trigger: bgImage,
+            scrub: 1,
+            start: "top center",
+            end: "top center-=200",
+          },
+        }
+      );
+    </script>
+  </body>
+</html>
