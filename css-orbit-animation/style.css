@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --speed: 22s;
+  --sizeX: 20em;
+  --sizeY: var(--sizeX);
+  --gap: calc(var(--sizeX) / 5);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #222;
+  font-size: calc(1vw + 1vh);
+}
+
+.loader {
+  position: relative;
+  width: var(--sizeX);
+  height: var(--sizeY);
+  background: #2a2a2a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  position: absolute;
+  width: calc(var(--sizeX) - var(--gap));
+  height: calc(var(--sizeY) - var(--gap));
+  border: 2px solid #191919;
+  border-radius: 50%;
+  animation: animate calc(var(--speed) / 2) linear infinite;
+}
+
+.circle2 {
+  width: calc(var(--sizeX) - calc(var(--gap) * 2));
+  height: calc(var(--sizeY) - calc(var(--gap) * 2));
+  animation: animate var(--speed) linear infinite;
+}
+
+.circle3 {
+  width: calc(var(--sizeX) - calc(var(--gap) * 3));
+  height: calc(var(--sizeY) - calc(var(--gap) * 3));
+  animation: animate calc(var(--speed) / 3) linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.circle::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background: var(--clr);
+  border-radius: 50%;
+  box-shadow: 0 0 2px var(--clr), 0 0 60px var(--clr);
+}
