@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Preload images in Javascript</title>
+    <meta charset="utf-8" />
+
+    <script type="text/javascript">
+      var imageFiles = new Array("a.png", "b.png", "c.png");
+      var imagesLoaded = new Number(0);
+
+      document.addEventListener("DOMContentLoaded", init, false);
+
+      function init() {
+        var images = new Array();
+
+        alert("It will proceed to preload the images.");
+
+        for (i = 0; i < imageFiles.length; i++)
+          images[i] = loadImage(imageFiles[i]);
+      }
+
+      function loadImage(url) {
+        var image = new Image();
+        image.addEventListener("load", imageLoaded, false);
+        image.src = url;
+        return image;
+      }
+
+      function imageLoaded() {
+        imagesLoaded++;
+
+        if (imagesLoaded == imageFiles.length)
+          alert("The images have been preloaded.");
+      }
+    </script>
+  </head>
+
+  <body>
+    <!-- <script>
+      var image = new Image();
+      image.addEventListener("load", imageLoaded, false);
+      image.src = "example.png";
+    </script> -->
+  </body>
+</html>
