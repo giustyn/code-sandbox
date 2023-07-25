@@ -1,0 +1,815 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+<title>Using turn.js and the new zoom feature</title>
+<meta name="viewport" content="width = 1050, user-scalable = no" />
+<script type="text/javascript" src="../../extras/jquery.min.1.7.js"></script>
+<script type="text/javascript" src="../../extras/modernizr.2.5.3.min.js"></script>
+<script type="text/javascript" src="../../lib/hash.js"></script>
+
+</head>
+<body>
+
+<div id="canvas">
+
+<div class="zoom-icon zoom-icon-in"></div>
+
+<div class="magazine-viewport">
+	<div class="container">
+		<div class="magazine">
+			<!-- Next button -->
+			<div ignore="1" class="next-button"></div>
+			<!-- Previous button -->
+			<div ignore="1" class="previous-button"></div>
+		</div>
+	</div>
+</div>
+
+<!-- Thumbnails -->
+<div class="thumbnails">
+	<div>
+		<ul>
+			<li class="i">
+				<img src="pages/1-thumb.jpg" width="76" height="100" class="page-1">
+				<div>1</div>
+			</li>
+			<li class="d">
+				<img src="pages/2-thumb.jpg" width="76" height="100" class="page-2">
+				<img src="pages/3-thumb.jpg" width="76" height="100" class="page-3">
+				<div>2-3</div>
+			</li>
+			<li class="d">
+				<img src="pages/4-thumb.jpg" width="76" height="100" class="page-4">
+				<img src="pages/5-thumb.jpg" width="76" height="100" class="page-5">
+				<div>4-5</div>
+			</li>
+			<li class="d">
+				<img src="pages/6-thumb.jpg" width="76" height="100" class="page-6">
+				<img src="pages/7-thumb.jpg" width="76" height="100" class="page-7">
+				<div>6-7</div>
+			</li>
+			<li class="d">
+				<img src="pages/8-thumb.jpg" width="76" height="100" class="page-8">
+				<img src="pages/9-thumb.jpg" width="76" height="100" class="page-9">
+				<div>8-9</div>
+			</li>
+			<li class="d">
+				<img src="pages/10-thumb.jpg" width="76" height="100" class="page-10">
+				<img src="pages/11-thumb.jpg" width="76" height="100" class="page-11">
+				<div>10-11</div>
+			</li>
+			<li class="d">
+				<img src="pages/12-thumb.jpg" width="76" height="100" class="page-12">
+				<img src="pages/13-thumb.jpg" width="76" height="100" class="page-13">
+				<div>12-13</div>
+			</li>
+			<li class="d">
+				<img src="pages/14-thumb.jpg" width="76" height="100" class="page-14">
+				<img src="pages/15-thumb.jpg" width="76" height="100" class="page-15">
+				<div>14-15</div>
+			</li>
+			<li class="d">
+				<img src="pages/16-thumb.jpg" width="76" height="100" class="page-16">
+				<img src="pages/17-thumb.jpg" width="76" height="100" class="page-17">
+				<div>16-17</div>
+			</li>
+			<li class="d">
+				<img src="pages/18-thumb.jpg" width="76" height="100" class="page-18">
+				<img src="pages/19-thumb.jpg" width="76" height="100" class="page-19">
+				<div>18-19</div>
+			</li>
+			<li class="d">
+				<img src="pages/20-thumb.jpg" width="76" height="100" class="page-20">
+				<img src="pages/21-thumb.jpg" width="76" height="100" class="page-21">
+				<div>20-21</div>
+			</li>
+			<li class="d">
+				<img src="pages/22-thumb.jpg" width="76" height="100" class="page-22">
+				<img src="pages/23-thumb.jpg" width="76" height="100" class="page-23">
+				<div>22-23</div>
+			</li>
+			<li class="d">
+				<img src="pages/24-thumb.jpg" width="76" height="100" class="page-24">
+				<img src="pages/25-thumb.jpg" width="76" height="100" class="page-25">
+				<div>24-25</div>
+			</li>
+			<li class="d">
+				<img src="pages/26-thumb.jpg" width="76" height="100" class="page-26">
+				<img src="pages/27-thumb.jpg" width="76" height="100" class="page-27">
+				<div>26-27</div>
+			</li>
+			<li class="d">
+				<img src="pages/28-thumb.jpg" width="76" height="100" class="page-28">
+				<img src="pages/29-thumb.jpg" width="76" height="100" class="page-29">
+				<div>28-29</div>
+			</li>
+			<li class="d">
+				<img src="pages/30-thumb.jpg" width="76" height="100" class="page-30">
+				<img src="pages/31-thumb.jpg" width="76" height="100" class="page-31">
+				<div>30-31</div>
+			</li>
+			<li class="d">
+				<img src="pages/32-thumb.jpg" width="76" height="100" class="page-32">
+				<img src="pages/33-thumb.jpg" width="76" height="100" class="page-33">
+				<div>32-33</div>
+			</li>
+			<li class="d">
+				<img src="pages/34-thumb.jpg" width="76" height="100" class="page-34">
+				<img src="pages/35-thumb.jpg" width="76" height="100" class="page-35">
+				<div>34-35</div>
+			</li>
+			<li class="d">
+				<img src="pages/36-thumb.jpg" width="76" height="100" class="page-36">
+				<img src="pages/37-thumb.jpg" width="76" height="100" class="page-37">
+				<div>36-37</div>
+			</li>
+			<li class="d">
+				<img src="pages/38-thumb.jpg" width="76" height="100" class="page-38">
+				<img src="pages/39-thumb.jpg" width="76" height="100" class="page-39">
+				<div>38-39</div>
+			</li>
+			<li class="d">
+				<img src="pages/40-thumb.jpg" width="76" height="100" class="page-40">
+				<img src="pages/41-thumb.jpg" width="76" height="100" class="page-41">
+				<div>40-41</div>
+			</li>
+			<li class="d">
+				<img src="pages/42-thumb.jpg" width="76" height="100" class="page-42">
+				<img src="pages/43-thumb.jpg" width="76" height="100" class="page-43">
+				<div>42-43</div>
+			</li>
+			<li class="d">
+				<img src="pages/44-thumb.jpg" width="76" height="100" class="page-44">
+				<img src="pages/45-thumb.jpg" width="76" height="100" class="page-45">
+				<div>44-45</div>
+			</li>
+			<li class="d">
+				<img src="pages/46-thumb.jpg" width="76" height="100" class="page-46">
+				<img src="pages/47-thumb.jpg" width="76" height="100" class="page-47">
+				<div>46-47</div>
+			</li>
+			<li class="d">
+				<img src="pages/48-thumb.jpg" width="76" height="100" class="page-48">
+				<img src="pages/49-thumb.jpg" width="76" height="100" class="page-49">
+				<div>48-49</div>
+			</li>
+			<li class="d">
+				<img src="pages/50-thumb.jpg" width="76" height="100" class="page-50">
+				<img src="pages/51-thumb.jpg" width="76" height="100" class="page-51">
+				<div>50-51</div>
+			</li>
+			<li class="d">
+				<img src="pages/52-thumb.jpg" width="76" height="100" class="page-52">
+				<img src="pages/53-thumb.jpg" width="76" height="100" class="page-53">
+				<div>52-53</div>
+			</li>
+			<li class="d">
+				<img src="pages/54-thumb.jpg" width="76" height="100" class="page-54">
+				<img src="pages/55-thumb.jpg" width="76" height="100" class="page-55">
+				<div>54-55</div>
+			</li>
+			<li class="d">
+				<img src="pages/56-thumb.jpg" width="76" height="100" class="page-56">
+				<img src="pages/57-thumb.jpg" width="76" height="100" class="page-57">
+				<div>56-57</div>
+			</li>
+			<li class="d">
+				<img src="pages/58-thumb.jpg" width="76" height="100" class="page-58">
+				<img src="pages/59-thumb.jpg" width="76" height="100" class="page-59">
+				<div>58-59</div>
+			</li>
+			<li class="d">
+				<img src="pages/60-thumb.jpg" width="76" height="100" class="page-60">
+				<img src="pages/61-thumb.jpg" width="76" height="100" class="page-61">
+				<div>60-61</div>
+			</li>
+			<li class="d">
+				<img src="pages/62-thumb.jpg" width="76" height="100" class="page-62">
+				<img src="pages/63-thumb.jpg" width="76" height="100" class="page-63">
+				<div>62-63</div>
+			</li>
+			<li class="d">
+				<img src="pages/64-thumb.jpg" width="76" height="100" class="page-64">
+				<img src="pages/65-thumb.jpg" width="76" height="100" class="page-65">
+				<div>64-65</div>
+			</li>
+			<li class="d">
+				<img src="pages/66-thumb.jpg" width="76" height="100" class="page-66">
+				<img src="pages/67-thumb.jpg" width="76" height="100" class="page-67">
+				<div>66-67</div>
+			</li>
+			<li class="d">
+				<img src="pages/68-thumb.jpg" width="76" height="100" class="page-68">
+				<img src="pages/69-thumb.jpg" width="76" height="100" class="page-69">
+				<div>68-69</div>
+			</li>
+			<li class="d">
+				<img src="pages/70-thumb.jpg" width="76" height="100" class="page-70">
+				<img src="pages/71-thumb.jpg" width="76" height="100" class="page-71">
+				<div>70-71</div>
+			</li>
+			<li class="d">
+				<img src="pages/72-thumb.jpg" width="76" height="100" class="page-72">
+				<img src="pages/73-thumb.jpg" width="76" height="100" class="page-73">
+				<div>72-73</div>
+			</li>
+			<li class="d">
+				<img src="pages/74-thumb.jpg" width="76" height="100" class="page-74">
+				<img src="pages/75-thumb.jpg" width="76" height="100" class="page-75">
+				<div>74-75</div>
+			</li>
+			<li class="d">
+				<img src="pages/76-thumb.jpg" width="76" height="100" class="page-76">
+				<img src="pages/77-thumb.jpg" width="76" height="100" class="page-77">
+				<div>76-77</div>
+			</li>
+			<li class="d">
+				<img src="pages/78-thumb.jpg" width="76" height="100" class="page-78">
+				<img src="pages/79-thumb.jpg" width="76" height="100" class="page-79">
+				<div>78-79</div>
+			</li>
+			<li class="d">
+				<img src="pages/80-thumb.jpg" width="76" height="100" class="page-80">
+				<img src="pages/81-thumb.jpg" width="76" height="100" class="page-81">
+				<div>80-81</div>
+			</li>
+			<li class="d">
+				<img src="pages/82-thumb.jpg" width="76" height="100" class="page-82">
+				<img src="pages/83-thumb.jpg" width="76" height="100" class="page-83">
+				<div>82-83</div>
+			</li>
+			<li class="d">
+				<img src="pages/84-thumb.jpg" width="76" height="100" class="page-84">
+				<img src="pages/85-thumb.jpg" width="76" height="100" class="page-85">
+				<div>84-85</div>
+			</li>
+			<li class="d">
+				<img src="pages/86-thumb.jpg" width="76" height="100" class="page-86">
+				<img src="pages/87-thumb.jpg" width="76" height="100" class="page-87">
+				<div>86-87</div>
+			</li>
+			<li class="d">
+				<img src="pages/88-thumb.jpg" width="76" height="100" class="page-88">
+				<img src="pages/89-thumb.jpg" width="76" height="100" class="page-89">
+				<div>88-89</div>
+			</li>
+			<li class="d">
+				<img src="pages/90-thumb.jpg" width="76" height="100" class="page-90">
+				<img src="pages/91-thumb.jpg" width="76" height="100" class="page-91">
+				<div>90-91</div>
+			</li>
+			<li class="d">
+				<img src="pages/92-thumb.jpg" width="76" height="100" class="page-92">
+				<img src="pages/93-thumb.jpg" width="76" height="100" class="page-93">
+				<div>92-93</div>
+			</li>
+			<li class="d">
+				<img src="pages/94-thumb.jpg" width="76" height="100" class="page-94">
+				<img src="pages/95-thumb.jpg" width="76" height="100" class="page-95">
+				<div>94-95</div>
+			</li>
+			<li class="d">
+				<img src="pages/96-thumb.jpg" width="76" height="100" class="page-96">
+				<img src="pages/97-thumb.jpg" width="76" height="100" class="page-97">
+				<div>96-97</div>
+			</li>
+			<li class="d">
+				<img src="pages/98-thumb.jpg" width="76" height="100" class="page-98">
+				<img src="pages/99-thumb.jpg" width="76" height="100" class="page-99">
+				<div>98-99</div>
+			</li>
+			<li class="d">
+				<img src="pages/100-thumb.jpg" width="76" height="100" class="page-100">
+				<img src="pages/101-thumb.jpg" width="76" height="100" class="page-101">
+				<div>100-101</div>
+			</li>
+			<li class="d">
+				<img src="pages/102-thumb.jpg" width="76" height="100" class="page-102">
+				<img src="pages/103-thumb.jpg" width="76" height="100" class="page-103">
+				<div>102-103</div>
+			</li>
+			<li class="d">
+				<img src="pages/104-thumb.jpg" width="76" height="100" class="page-104">
+				<img src="pages/105-thumb.jpg" width="76" height="100" class="page-105">
+				<div>104-105</div>
+			</li>
+			<li class="d">
+				<img src="pages/106-thumb.jpg" width="76" height="100" class="page-106">
+				<img src="pages/107-thumb.jpg" width="76" height="100" class="page-107">
+				<div>106-107</div>
+			</li>
+			<li class="d">
+				<img src="pages/108-thumb.jpg" width="76" height="100" class="page-108">
+				<img src="pages/109-thumb.jpg" width="76" height="100" class="page-109">
+				<div>108-109</div>
+			</li>
+			<li class="d">
+				<img src="pages/110-thumb.jpg" width="76" height="100" class="page-110">
+				<img src="pages/111-thumb.jpg" width="76" height="100" class="page-111">
+				<div>110-111</div>
+			</li>
+			<li class="d">
+				<img src="pages/112-thumb.jpg" width="76" height="100" class="page-112">
+				<img src="pages/113-thumb.jpg" width="76" height="100" class="page-113">
+				<div>112-113</div>
+			</li>
+			<li class="d">
+				<img src="pages/114-thumb.jpg" width="76" height="100" class="page-114">
+				<img src="pages/115-thumb.jpg" width="76" height="100" class="page-115">
+				<div>114-115</div>
+			</li>
+			<li class="d">
+				<img src="pages/116-thumb.jpg" width="76" height="100" class="page-116">
+				<img src="pages/117-thumb.jpg" width="76" height="100" class="page-117">
+				<div>116-117</div>
+			</li>
+			<li class="d">
+				<img src="pages/118-thumb.jpg" width="76" height="100" class="page-118">
+				<img src="pages/119-thumb.jpg" width="76" height="100" class="page-119">
+				<div>118-119</div>
+			</li>
+			<li class="d">
+				<img src="pages/120-thumb.jpg" width="76" height="100" class="page-120">
+				<img src="pages/121-thumb.jpg" width="76" height="100" class="page-121">
+				<div>120-121</div>
+			</li>
+			<li class="d">
+				<img src="pages/122-thumb.jpg" width="76" height="100" class="page-122">
+				<img src="pages/123-thumb.jpg" width="76" height="100" class="page-123">
+				<div>122-123</div>
+			</li>
+			<li class="d">
+				<img src="pages/124-thumb.jpg" width="76" height="100" class="page-124">
+				<img src="pages/125-thumb.jpg" width="76" height="100" class="page-125">
+				<div>124-125</div>
+			</li>
+			<li class="d">
+				<img src="pages/126-thumb.jpg" width="76" height="100" class="page-126">
+				<img src="pages/127-thumb.jpg" width="76" height="100" class="page-127">
+				<div>126-127</div>
+			</li>
+			<li class="d">
+				<img src="pages/128-thumb.jpg" width="76" height="100" class="page-128">
+				<img src="pages/129-thumb.jpg" width="76" height="100" class="page-129">
+				<div>128-129</div>
+			</li>
+			<li class="d">
+				<img src="pages/130-thumb.jpg" width="76" height="100" class="page-130">
+				<img src="pages/131-thumb.jpg" width="76" height="100" class="page-131">
+				<div>130-131</div>
+			</li>
+			<li class="d">
+				<img src="pages/132-thumb.jpg" width="76" height="100" class="page-132">
+				<img src="pages/133-thumb.jpg" width="76" height="100" class="page-133">
+				<div>132-133</div>
+			</li>
+			<li class="d">
+				<img src="pages/134-thumb.jpg" width="76" height="100" class="page-134">
+				<img src="pages/135-thumb.jpg" width="76" height="100" class="page-135">
+				<div>134-135</div>
+			</li>
+			<li class="d">
+				<img src="pages/136-thumb.jpg" width="76" height="100" class="page-136">
+				<img src="pages/137-thumb.jpg" width="76" height="100" class="page-137">
+				<div>136-137</div>
+			</li>
+			<li class="d">
+				<img src="pages/138-thumb.jpg" width="76" height="100" class="page-138">
+				<img src="pages/139-thumb.jpg" width="76" height="100" class="page-139">
+				<div>138-139</div>
+			</li>
+			<li class="d">
+				<img src="pages/140-thumb.jpg" width="76" height="100" class="page-140">
+				<img src="pages/141-thumb.jpg" width="76" height="100" class="page-141">
+				<div>140-141</div>
+			</li>
+			<li class="d">
+				<img src="pages/142-thumb.jpg" width="76" height="100" class="page-142">
+				<img src="pages/143-thumb.jpg" width="76" height="100" class="page-143">
+				<div>142-143</div>
+			</li>
+			<li class="d">
+				<img src="pages/144-thumb.jpg" width="76" height="100" class="page-144">
+				<img src="pages/145-thumb.jpg" width="76" height="100" class="page-145">
+				<div>144-145</div>
+			</li>
+			<li class="d">
+				<img src="pages/146-thumb.jpg" width="76" height="100" class="page-146">
+				<img src="pages/147-thumb.jpg" width="76" height="100" class="page-147">
+				<div>146-147</div>
+			</li>
+			<li class="d">
+				<img src="pages/148-thumb.jpg" width="76" height="100" class="page-148">
+				<img src="pages/149-thumb.jpg" width="76" height="100" class="page-149">
+				<div>148-149</div>
+			</li>
+
+			<li class="i">
+				<img src="pages/150-thumb.jpg" width="76" height="100" class="page-150">
+				<div>150</div>
+			</li>
+		<ul>
+	<div>	
+</div>
+</div>
+
+<script type="text/javascript">
+
+function loadApp() {
+
+ 	$('#canvas').fadeIn(1000);
+
+ 	var flipbook = $('.magazine');
+
+ 	// Check if the CSS was already loaded
+	
+	if (flipbook.width()==0 || flipbook.height()==0) {
+		setTimeout(loadApp, 10);
+		return;
+	}
+	
+	// Create the flipbook
+
+	flipbook.turn({
+			
+			// Magazine width
+
+			width: 922,
+
+			// Magazine height
+
+			height: 600,
+
+			// Duration in millisecond
+
+			duration: 1000,
+
+			// Hardware acceleration
+
+			acceleration: !isChrome(),
+
+			// Enables gradients
+
+			gradients: true,
+			
+			// Auto center this flipbook
+
+			autoCenter: true,
+
+			// Elevation from the edge of the flipbook when turning a page
+
+			elevation: 50,
+
+			// The number of pages
+
+			pages: 150,
+
+			// Events
+
+			when: {
+				turning: function(event, page, view) {
+					
+					var book = $(this),
+					currentPage = book.turn('page'),
+					pages = book.turn('pages');
+			
+					// Update the current URI
+
+					Hash.go('page/' + page).update();
+
+					// Show and hide navigation buttons
+
+					disableControls(page);
+					
+
+					$('.thumbnails .page-'+currentPage).
+						parent().
+						removeClass('current');
+
+					$('.thumbnails .page-'+page).
+						parent().
+						addClass('current');
+
+
+
+				},
+
+				turned: function(event, page, view) {
+
+					disableControls(page);
+
+					$(this).turn('center');
+
+					if (page==1) { 
+						$(this).turn('peel', 'br');
+					}
+
+				},
+
+				missing: function (event, pages) {
+
+					// Add pages that aren't in the magazine
+
+					for (var i = 0; i < pages.length; i++)
+						addPage(pages[i], $(this));
+
+				}
+			}
+
+	});
+
+	// Zoom.js
+
+	$('.magazine-viewport').zoom({
+		flipbook: $('.magazine'),
+
+		max: function() { 
+			
+			return largeMagazineWidth()/$('.magazine').width();
+
+		}, 
+
+		when: {
+
+			swipeLeft: function() {
+
+				$(this).zoom('flipbook').turn('next');
+
+			},
+
+			swipeRight: function() {
+				
+				$(this).zoom('flipbook').turn('previous');
+
+			},
+
+			resize: function(event, scale, page, pageElement) {
+
+				if (scale==1)
+					loadSmallPage(page, pageElement);
+				else
+					loadLargePage(page, pageElement);
+
+			},
+
+			zoomIn: function () {
+
+				$('.thumbnails').hide();
+				$('.made').hide();
+				$('.magazine').removeClass('animated').addClass('zoom-in');
+				$('.zoom-icon').removeClass('zoom-icon-in').addClass('zoom-icon-out');
+				
+				if (!window.escTip && !$.isTouch) {
+					escTip = true;
+
+					$('<div />', {'class': 'exit-message'}).
+						html('<div>Press ESC to exit</div>').
+							appendTo($('body')).
+							delay(2000).
+							animate({opacity:0}, 500, function() {
+								$(this).remove();
+							});
+				}
+			},
+
+			zoomOut: function () {
+
+				$('.exit-message').hide();
+				$('.thumbnails').fadeIn();
+				$('.made').fadeIn();
+				$('.zoom-icon').removeClass('zoom-icon-out').addClass('zoom-icon-in');
+
+				setTimeout(function(){
+					$('.magazine').addClass('animated').removeClass('zoom-in');
+					resizeViewport();
+				}, 0);
+
+			}
+		}
+	});
+
+	// Zoom event
+
+	if ($.isTouch)
+		$('.magazine-viewport').bind('zoom.doubleTap', zoomTo);
+	else
+		$('.magazine-viewport').bind('zoom.tap', zoomTo);
+
+
+	// Using arrow keys to turn the page
+
+	$(document).keydown(function(e){
+
+		var previous = 37, next = 39, esc = 27;
+
+		switch (e.keyCode) {
+			case previous:
+
+				// left arrow
+				$('.magazine').turn('previous');
+				e.preventDefault();
+
+			break;
+			case next:
+
+				//right arrow
+				$('.magazine').turn('next');
+				e.preventDefault();
+
+			break;
+			case esc:
+				
+				$('.magazine-viewport').zoom('zoomOut');	
+				e.preventDefault();
+
+			break;
+		}
+	});
+
+	// URIs - Format #/page/1 
+
+	Hash.on('^page\/([0-9]*)$', {
+		yep: function(path, parts) {
+			var page = parts[1];
+
+			if (page!==undefined) {
+				if ($('.magazine').turn('is'))
+					$('.magazine').turn('page', page);
+			}
+
+		},
+		nop: function(path) {
+
+			if ($('.magazine').turn('is'))
+				$('.magazine').turn('page', 1);
+		}
+	});
+
+
+	$(window).resize(function() {
+		resizeViewport();
+	}).bind('orientationchange', function() {
+		resizeViewport();
+	});
+
+	// Events for thumbnails
+
+	$('.thumbnails').click(function(event) {
+		
+		var page;
+
+		if (event.target && (page=/page-([0-9]+)/.exec($(event.target).attr('class'))) ) {
+		
+			$('.magazine').turn('page', page[1]);
+		}
+	});
+
+	$('.thumbnails li').
+		bind($.mouseEvents.over, function() {
+			
+			$(this).addClass('thumb-hover');
+
+		}).bind($.mouseEvents.out, function() {
+			
+			$(this).removeClass('thumb-hover');
+
+		});
+
+	if ($.isTouch) {
+	
+		$('.thumbnails').
+			addClass('thumbanils-touch').
+			bind($.mouseEvents.move, function(event) {
+				event.preventDefault();
+			});
+
+	} else {
+
+		$('.thumbnails ul').mouseover(function() {
+
+			$('.thumbnails').addClass('thumbnails-hover');
+
+		}).mousedown(function() {
+
+			return false;
+
+		}).mouseout(function() {
+
+			$('.thumbnails').removeClass('thumbnails-hover');
+
+		});
+
+	}
+
+
+	// Regions
+
+	if ($.isTouch) {
+		$('.magazine').bind('touchstart', regionClick);
+	} else {
+		$('.magazine').click(regionClick);
+	}
+
+	// Events for the next button
+
+	$('.next-button').bind($.mouseEvents.over, function() {
+		
+		$(this).addClass('next-button-hover');
+
+	}).bind($.mouseEvents.out, function() {
+		
+		$(this).removeClass('next-button-hover');
+
+	}).bind($.mouseEvents.down, function() {
+		
+		$(this).addClass('next-button-down');
+
+	}).bind($.mouseEvents.up, function() {
+		
+		$(this).removeClass('next-button-down');
+
+	}).click(function() {
+		
+		$('.magazine').turn('next');
+
+	});
+
+	// Events for the next button
+	
+	$('.previous-button').bind($.mouseEvents.over, function() {
+		
+		$(this).addClass('previous-button-hover');
+
+	}).bind($.mouseEvents.out, function() {
+		
+		$(this).removeClass('previous-button-hover');
+
+	}).bind($.mouseEvents.down, function() {
+		
+		$(this).addClass('previous-button-down');
+
+	}).bind($.mouseEvents.up, function() {
+		
+		$(this).removeClass('previous-button-down');
+
+	}).click(function() {
+		
+		$('.magazine').turn('previous');
+
+	});
+
+
+	resizeViewport();
+
+	$('.magazine').addClass('animated');
+
+}
+
+// Zoom icon
+
+ $('.zoom-icon').bind('mouseover', function() { 
+ 	
+ 	if ($(this).hasClass('zoom-icon-in'))
+ 		$(this).addClass('zoom-icon-in-hover');
+
+ 	if ($(this).hasClass('zoom-icon-out'))
+ 		$(this).addClass('zoom-icon-out-hover');
+ 
+ }).bind('mouseout', function() { 
+ 	
+ 	 if ($(this).hasClass('zoom-icon-in'))
+ 		$(this).removeClass('zoom-icon-in-hover');
+ 	
+ 	if ($(this).hasClass('zoom-icon-out'))
+ 		$(this).removeClass('zoom-icon-out-hover');
+
+ }).bind('click', function() {
+
+ 	if ($(this).hasClass('zoom-icon-in'))
+ 		$('.magazine-viewport').zoom('zoomIn');
+ 	else if ($(this).hasClass('zoom-icon-out'))	
+		$('.magazine-viewport').zoom('zoomOut');
+
+ });
+
+ $('#canvas').hide();
+
+
+// Load the HTML4 version if there's not CSS transform
+
+yepnope({
+	test : Modernizr.csstransforms,
+	yep: ['../../lib/turn.js'],
+	nope: ['../../lib/turn.html4.min.js'],
+	both: ['../../lib/zoom.min.js', 'js/magazine.js', 'css/magazine.css'],
+	complete: loadApp
+});
+
+</script>
+
+</body>
+</html>
